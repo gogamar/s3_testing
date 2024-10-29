@@ -1,86 +1,93 @@
-# Sprint 3 IT Academy | Video management tool
+# Movie Management Exercises
 
-## Introduction
+## Overview
 
-A company in the audiovisual sector has asked us for a web application that will allow their employees to quickly find movies from a large database they have, since the process is currently done manually.
+This repository contains a series of exercises focused on managing and analyzing movie data using JavaScript and Jest for testing.
 
-You will be in charge of setting up the core of the application: all the logic of filtering and sorting of movies. You have 2 weeks to finish, which is how long this sprint lasts.
+## Technology Used
 
-<br>
+- JavaScript
+- Jest (for testing)
 
-## Requirements
+## Getting Started
 
+To get started with this project, follow these steps:
 
-1. Clone this repo
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/gogamar/s3_testing.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd s3_testing
+   ```
+
+3. Install the necessary dependencies:
+
+   ```bash
+   npm install
+   ```
+
+### Running Tests
+
+To run the tests using Jest, execute the following command:
+
 ```bash
-$ git clone https://github.com/IT-Academy-BCN/starter-code-frontend-sprint-3-movies
+npm test
 ```
 
-2. Unlink your repo from the itacademy repository
-```bash
-$ git remote rm origin
-```
+This will run all test files matching the `*.spec.js` pattern in the `tests` directory.
 
-3. Link your repo to the repository you have to create in your github account
-```bash
-$ git remote add origin <your repo name!>
-```
+### Running Tests with HTML Report
 
-<br>
-
-## Submission
-
-1. Upon completion, run the following commands:
+To run the tests in watch mode and generate an HTML report of the test results, use the following command:
 
 ```bash
-$ git add .
-$ git commit -m "Sprint Solution"
-$ git push origin master
+npm run test -- --watch
 ```
 
-2. Create Pull Request.
+This command will execute the tests continuously in watch mode, allowing you to see real-time results as you make changes.
 
-3. Upload the link to the virtual campus so that your mentor can correct it and give you feedback.
+After running tests, you can open the HTML report by navigating to `test-results.html` file and opening it with Visual Code live server.
 
+## Exercises Overview
 
+### Level 1
 
-<br>
+1. **Exercise 1: Get All Directors**
 
-## Introduction
+   - Create a function `getAllDirectors()` that returns an array of all movie directors.
 
-The statement of the exercise is available on the virtual campus.
+2. **Exercise 2: Get Movies from a Director**
 
-<br>
+   - Implement `getMoviesFromDirector(director)` to return an array of movies directed by a specified director.
 
-## Tests!
+3. **Exercise 3: Average Rating of a Director's Movies**
 
+   - Implement `moviesAverageOfDirector(movies, director)` to calculate and return the average score of a director's movies.
 
-```shell
-$ npm install
-$ npm run test:watch
-```
+4. **Exercise 4: Order Movies Alphabetically by Title**
 
-And last, open the generated `test-results.html` file with the "Live Server" VSCode extension to see test results.
+   - Create a function that returns the first 20 movies sorted alphabetically by title.
 
-Apart from the statement, you will know exactly what you are asked to do by looking at the file `tests/films.spec.js`, all tests are already defined here!
+5. **Exercise 5: Order Movies by Year**
 
-<br>
+   - Create a function to return movies sorted by year, then by title alphabetically for movies released in the same year.
 
-## Instructions
+6. **Exercise 6: Average Rating by Genre**
+   - Implement a function to calculate the average score of movies by a specific genre.
 
-You have the following indications from the frontend responsible:
+### Level 2 (Optional)
 
-- It is mandatory to implement all loops in ES6 (using map, reduce, filter and sort to manipulate arrays).
+7. **Exercise 7: Convert Movie Duration to Minutes**
+   - Create a function that converts movie durations from the format `Xh Ymin` to just minutes.
 
-- As at the moment we don't consume data from a server using an API, we will work with data from the src/data.js archive. For the moment we will implement the logic using
-an array of information about 250 movies.
+### Level 3 (Optional)
 
-- The implementation is about processing this array of movies, to display it as requested in each exercise.
-
-- The logic to implement will be placed in the src/films.js file.
-
-- You don't need to show the result of each function on the screen. Your goal is to pass the tests.  More information on how to program oriented to pass tests at the end of the document.
-
-- Don't forget to include the capture of the test results in the virtual campus.
-
-
+8. **Exercise 8: Best Film of the Year**
+   - Implement a function that returns the best film of a given year based on the highest rating.
