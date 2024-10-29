@@ -1,7 +1,9 @@
 import movies from './data.js';
 
 getAllDirectors(movies);
+getMoviesFromDirector(movies, 'Steven Spielberg');
 
+// Exercise 1: Get the directors of the movies
 function getAllDirectors(movies) {
   let result = movies.map((movie) => movie.director);
 
@@ -10,7 +12,11 @@ function getAllDirectors(movies) {
 }
 
 // Exercise 2: Get the films of a certain director
-function getMoviesFromDirector(array, director) {}
+function getMoviesFromDirector(movies, director) {
+  let result = movies.filter((movie) => movie.director === director);
+  console.log('EXERCICE 2 ->', result);
+  return result;
+}
 
 // Exercise 3: Calculate the average of the films of a given director.
 function moviesAverageOfDirector(array, director) {}
