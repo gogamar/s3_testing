@@ -1,4 +1,4 @@
-import movies from './data.js';
+const movies = require('./data.js');
 
 getAllDirectors(movies);
 getMoviesFromDirector(movies, 'Steven Spielberg');
@@ -22,29 +22,45 @@ function getMoviesFromDirector(movies, director) {
 
 // Exercise 3: Calculate the average of the films of a given director.
 function moviesAverageOfDirector(movies, director) {
-  const movDir = getMoviesFromDirector(movies, director);
-  const sumScores = movDir.reduce((acc, movie) => acc + movie.score, 0);
-  const average = sumScores / movDir.length;
+  const moviesDirector = getMoviesFromDirector(movies, director);
+  const sumScores = moviesDirector.reduce((acc, movie) => acc + movie.score, 0);
+  const average = sumScores / moviesDirector.length;
   console.log('EXERCICE 3 ->', average);
+  return average;
 }
 
 // Exercise 4:  Alphabetic order by title
 function orderAlphabetically(movies) {
   const sortedMovies = movies
     .slice()
-    .sort((a, b) => a.title.localeCompare(b.title));
+    .sort((a, b) => a.title.localeCompare(b.title))
+    .map((movie) => movie.title);
 
   const sortedMoviesTwenty = sortedMovies.slice(0, 20);
 
   console.log('EXERCICE 4 ->', sortedMoviesTwenty);
-  return sortedMovies;
+  return sortedMoviesTwenty;
 }
 
 // Exercise 5: Order by year, ascending
-function orderByYear() {}
+function orderByYear(movies) {
+  const orderedMovies = movies
+    .slice()
+    .sort((a, b) => a.year - b.year || a.title.localeCompare(b.title));
+  console.log('EXERCICE 5 ->', orderedMovies);
+  return orderedMovies;
+}
 
 // Exercise 6: Calculate the average of the movies in a category
-function moviesAverageByCategory() {}
+function moviesAverageByCategory(movies, category) {
+  const moviesCategory = movies.filter((movie) =>
+    movie.genre.includes(category)
+  );
+  const sumScores = moviesCategory.reduce((acc, movie) => acc + movie.score, 0);
+  const average = sumScores / moviesCategory.length;
+  console.log('EXERCICE 6 ->', average);
+  return average;
+}
 
 // Exercise 7: Modify the duration of movies to minutes
 function hoursToMinutes() {}
