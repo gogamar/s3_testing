@@ -2,10 +2,11 @@ import movies from './data.js';
 
 getAllDirectors(movies);
 getMoviesFromDirector(movies, 'Steven Spielberg');
+moviesAverageOfDirector(movies, 'Alejandro González Iñárritu');
 
 // Exercise 1: Get the directors of the movies
 function getAllDirectors(movies) {
-  let result = movies.map((movie) => movie.director);
+  const result = movies.map((movie) => movie.director);
 
   console.log('EXERCICE 1 ->', result);
   return result;
@@ -13,13 +14,18 @@ function getAllDirectors(movies) {
 
 // Exercise 2: Get the films of a certain director
 function getMoviesFromDirector(movies, director) {
-  let result = movies.filter((movie) => movie.director === director);
-  console.log('EXERCICE 2 ->', result);
-  return result;
+  const moviesDirector = movies.filter((movie) => movie.director === director);
+  console.log('EXERCICE 2 ->', moviesDirector);
+  return moviesDirector;
 }
 
 // Exercise 3: Calculate the average of the films of a given director.
-function moviesAverageOfDirector(array, director) {}
+function moviesAverageOfDirector(movies, director) {
+  const movDir = getMoviesFromDirector(movies, director);
+  const sumScores = movDir.reduce((acc, movie) => acc + movie.score, 0);
+  const average = sumScores / movDir.length;
+  console.log('EXERCICE 3 ->', average);
+}
 
 // Exercise 4:  Alphabetic order by title
 function orderAlphabetically(array) {}
