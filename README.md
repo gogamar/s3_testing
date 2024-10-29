@@ -48,7 +48,7 @@ This will run all test files matching the `*.spec.js` pattern in the `tests` dir
 To run the tests in watch mode and generate an HTML report of the test results, use the following command:
 
 ```bash
-npm run test -- --watch
+npm run test:watch
 ```
 
 This command will execute the tests continuously in watch mode, allowing you to see real-time results as you make changes.
