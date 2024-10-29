@@ -3,6 +3,7 @@ import movies from './data.js';
 getAllDirectors(movies);
 getMoviesFromDirector(movies, 'Steven Spielberg');
 moviesAverageOfDirector(movies, 'Alejandro González Iñárritu');
+orderAlphabetically(movies);
 
 // Exercise 1: Get the directors of the movies
 function getAllDirectors(movies) {
@@ -28,7 +29,16 @@ function moviesAverageOfDirector(movies, director) {
 }
 
 // Exercise 4:  Alphabetic order by title
-function orderAlphabetically(array) {}
+function orderAlphabetically(movies) {
+  const sortedMovies = movies
+    .slice()
+    .sort((a, b) => a.title.localeCompare(b.title));
+
+  const sortedMoviesTwenty = sortedMovies.slice(0, 20);
+
+  console.log('EXERCICE 4 ->', sortedMoviesTwenty);
+  return sortedMovies;
+}
 
 // Exercise 5: Order by year, ascending
 function orderByYear() {}
